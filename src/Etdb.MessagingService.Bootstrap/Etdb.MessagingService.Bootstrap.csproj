@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.0.0-preview.2" />
+    <PackageReference Include="IdentityServer4" Version="3.0.0-preview7.33" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0-preview.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview7.19365.7" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.0.0-dev-00059" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00806" />
+    <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0-rc2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.0.0-rc2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Update="appsettings.Development.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Etdb.MessagingService.Controllers\Etdb.MessagingService.Controllers.csproj" />
+  </ItemGroup>
+
+</Project>
