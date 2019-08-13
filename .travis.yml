@@ -1,0 +1,37 @@
+sudo: required
+dist: bionic
+language: csharp
+solution: Etdb.MessagingService.AspNetCore.sln
+mono: none
+addons:
+  snaps:
+    - name: dotnet-sdk
+      classic: true
+      channel: latest/beta
+env:
+  global:
+    - DocumentDbContextOptions__ConnectionString="mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@localhost:27017"
+    - DocumentDbContextOptions__DatabaseName="Etdb_MessagingService_Travis"
+    - RedisCacheOptions__Configuration="${RedisConnection}"
+    - RedisCacheOptions__InstanceName="Etdb_MessagingService_Travis"
+stages:
+  - build
+  - test
+jobs:
+  include:
+    - stage: build
+      name: build solution
+      before_script:
+      - sudo snap alias dotnet-sdk.dotnet dotnet
+      script: dotnet restore && dotnet build
+    - stage: test
+      name: run-tests
+      services: 
+        - mongodb
+        - redis-server
+      before_script:
+        - sudo snap alias dotnet-sdk.dotnet dotnet
+        - sh setup-mongodb-user.sh "$MONGODB_USERNAME" "$MONGODB_PASSWORD"
+        - sh scaffold-database.sh
+      script: ./run-tests.sh
+

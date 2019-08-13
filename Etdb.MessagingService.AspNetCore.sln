@@ -14,6 +14,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "misc", "misc", "{CB25A996-8849-467C-A139-593476C5FF95}"
 ProjectSection(SolutionItems) = preProject
 	src\Directory.Build.props = src\Directory.Build.props
+	scaffold-database.sh = scaffold-database.sh
+	setup-mongodb-user.sh = setup-mongodb-user.sh
+	watch.sh = watch.sh
+	dev_environment.md = dev_environment.md
+	README.md = README.md
+	LICENSE = LICENSE
+	.travis.yml = .travis.yml
 EndProjectSection
 EndProject
 Global
