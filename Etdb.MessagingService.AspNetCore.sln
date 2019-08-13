@@ -21,6 +21,7 @@ ProjectSection(SolutionItems) = preProject
 	README.md = README.md
 	LICENSE = LICENSE
 	.travis.yml = .travis.yml
+	run-tests.sh = run-tests.sh
 EndProjectSection
 EndProject
 Global
