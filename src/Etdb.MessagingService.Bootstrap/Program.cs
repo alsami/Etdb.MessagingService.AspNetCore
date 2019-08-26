@@ -18,7 +18,7 @@ namespace Etdb.MessagingService.Bootstrap
     {
         private static readonly string LogPath = Path.Combine(AppContext.BaseDirectory, "Logs",
             $"{Assembly.GetExecutingAssembly().GetName().Name}.log");
-        
+
         public static Task Main(string[] args) => CreateHostBuilder(args).Build().RunAsync();
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>

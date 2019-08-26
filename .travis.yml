@@ -32,6 +32,5 @@ jobs:
       before_script:
         - sudo snap alias dotnet-sdk.dotnet dotnet
         - sh setup-mongodb-user.sh "$MONGODB_USERNAME" "$MONGODB_PASSWORD"
-        - sh scaffold-database.sh
       script: ./run-tests.sh
 

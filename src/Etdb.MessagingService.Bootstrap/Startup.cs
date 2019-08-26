@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Etdb.MessagingService.Bootstrap.Configuration;
+using Etdb.MessagingService.Hubs;
 using Etdb.ServiceBase.Constants;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Builder;
@@ -33,6 +34,14 @@ namespace Etdb.MessagingService.Bootstrap
 
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("Default",
+                    builder => builder.AllowCredentials().AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
+            });
+
+            services.AddSignalR(options => { options.EnableDetailedErrors = true; });
+
             services.AddControllers(options =>
                 {
                     options.EnableEndpointRouting = false;
@@ -68,8 +77,13 @@ namespace Etdb.MessagingService.Bootstrap
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             app.UseAuthentication()
+                .UseCors("Default")
                 .UseRouting()
-                .UseEndpoints(endpoints => endpoints.MapControllers());
+                .UseEndpoints(endpoints =>
+                {
+                    endpoints.MapHub<ChatHub>("hubs/chat");
+                    endpoints.MapControllers();
+                });
         }
     }
 }

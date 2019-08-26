@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Etdb.ServiceBase.Cqrs" Version="3.0.0-preview.4" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.MessagingService.Cqrs.Abstractions\Etdb.MessagingService.Cqrs.Abstractions.csproj" />
+    </ItemGroup>
+
+</Project>

@@ -5,8 +5,7 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="IdentityModel" Version="4.0.0" />
-      <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.2.5" />
+      <PackageReference Include="Etdb.ServiceBase.Cqrs.Abstractions" Version="3.0.0-preview.4" />
     </ItemGroup>
 
 </Project>

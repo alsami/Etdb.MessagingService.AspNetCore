@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>netstandard2.0</TargetFramework>
+    </PropertyGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Etdb.MessagingService.Repositories.Abstractions\Etdb.MessagingService.Repositories.Abstractions.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Etdb.ServiceBase.DocumentRepository" Version="3.0.0-preview.4" />
+    </ItemGroup>
+
+</Project>

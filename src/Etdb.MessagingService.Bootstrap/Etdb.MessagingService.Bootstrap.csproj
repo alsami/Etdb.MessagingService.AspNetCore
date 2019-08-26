@@ -2,15 +2,21 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.0</TargetFramework>
+    <UserSecretsId>Etdb_MessagingService</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.0.0-preview.2" />
-    <PackageReference Include="IdentityServer4" Version="3.0.0-preview7.33" />
+    <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="2.0.0" />
+    <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.0.0-preview.4" />
+    <PackageReference Include="Etdb.ServiceBase.Cqrs" Version="3.0.0-preview.4" />
+    <PackageReference Include="Etdb.ServiceBase.Cryptography" Version="3.0.0-preview.4" />
+    <PackageReference Include="Etdb.ServiceBase.DocumentRepository" Version="3.0.0-preview.4" />
+    <PackageReference Include="IdentityServer4" Version="3.0.0-preview8.19" />
     <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0-preview.2" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview7.19365.7" />
-    <PackageReference Include="Serilog.AspNetCore" Version="3.0.0-dev-00059" />
-    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00806" />
+    <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="3.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview8.19405.7" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.0.0" />
+    <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00823" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0-rc2" />
     <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.0.0-rc2" />
@@ -24,7 +30,17 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Etdb.MessagingService.AutoMapper\Etdb.MessagingService.AutoMapper.csproj" />
     <ProjectReference Include="..\Etdb.MessagingService.Controllers\Etdb.MessagingService.Controllers.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Cqrs.Abstractions\Etdb.MessagingService.Cqrs.Abstractions.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Cqrs\Etdb.MessagingService.Cqrs.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Domain\Etdb.MessagingService.Domain.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Hubs\Etdb.MessagingService.Hubs.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Presentation\Etdb.MessagingService.Presentation.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Repositories.Abstractions\Etdb.MessagingService.Repositories.Abstractions.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Repositories\Etdb.MessagingService.Repositories.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Services.Abstractions\Etdb.MessagingService.Services.Abstractions.csproj" />
+    <ProjectReference Include="..\Etdb.MessagingService.Services\Etdb.MessagingService.Services.csproj" />
   </ItemGroup>
 
 </Project>
