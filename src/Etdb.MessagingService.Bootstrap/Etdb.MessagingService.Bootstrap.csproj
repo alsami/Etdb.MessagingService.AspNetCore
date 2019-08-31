@@ -6,6 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0-rc1" />
     <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="2.0.0" />
     <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.0.0-preview.4" />
     <PackageReference Include="Etdb.ServiceBase.Cqrs" Version="3.0.0-preview.4" />

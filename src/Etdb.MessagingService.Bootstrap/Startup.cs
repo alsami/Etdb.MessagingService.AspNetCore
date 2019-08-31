@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Autofac;
 using Etdb.MessagingService.Bootstrap.Configuration;
 using Etdb.MessagingService.Hubs;
 using Etdb.ServiceBase.Constants;
@@ -72,6 +73,11 @@ namespace Etdb.MessagingService.Bootstrap
                     options.ApiName = ServiceNames.MessagingService;
                     options.RequireHttpsMetadata = this.hostingEnvironment.IsProduction();
                 });
+        }
+
+        public void ConfigureContainer(ContainerBuilder builder)
+        {
+            
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
