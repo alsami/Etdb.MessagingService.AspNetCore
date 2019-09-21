@@ -6,21 +6,21 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0-rc1" />
+    <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="5.0.0-rc2" />
     <PackageReference Include="AutoMapper.Contrib.Autofac.DependencyInjection" Version="2.0.0" />
-    <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.0.0-preview.4" />
-    <PackageReference Include="Etdb.ServiceBase.Cqrs" Version="3.0.0-preview.4" />
-    <PackageReference Include="Etdb.ServiceBase.Cryptography" Version="3.0.0-preview.4" />
-    <PackageReference Include="Etdb.ServiceBase.DocumentRepository" Version="3.0.0-preview.4" />
-    <PackageReference Include="IdentityServer4" Version="3.0.0-preview8.19" />
-    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0-preview.2" />
+    <PackageReference Include="Etdb.ServiceBase.Constants" Version="3.0.0-rc.0" />
+    <PackageReference Include="Etdb.ServiceBase.Cqrs" Version="3.0.0-rc.0" />
+    <PackageReference Include="Etdb.ServiceBase.Cryptography" Version="3.0.0-rc.0" />
+    <PackageReference Include="Etdb.ServiceBase.DocumentRepository" Version="3.0.0-rc.0" />
+    <PackageReference Include="IdentityServer4" Version="3.0.0" />
+    <PackageReference Include="IdentityServer4.AccessTokenValidation" Version="3.0.0" />
     <PackageReference Include="MediatR.Extensions.Autofac.DependencyInjection" Version="3.0.1" />
-    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-preview8.19405.7" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="3.0.0-rc1.19457.4" />
     <PackageReference Include="Serilog.AspNetCore" Version="3.0.0" />
     <PackageReference Include="Serilog.Sinks.Console" Version="3.1.2-dev-00823" />
     <PackageReference Include="Serilog.Sinks.RollingFile" Version="3.3.1-dev-00771" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0-rc2" />
-    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.0.0-rc2" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerGen" Version="5.0.0-rc3" />
+    <PackageReference Include="Swashbuckle.AspNetCore.SwaggerUi" Version="5.0.0-rc3" />
   </ItemGroup>
 
   <ItemGroup>
