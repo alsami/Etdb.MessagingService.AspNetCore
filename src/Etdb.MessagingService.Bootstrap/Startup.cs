@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Autofac;
+using Autofac.Extensions.FluentBuilder;
 using Etdb.MessagingService.Bootstrap.Configuration;
 using Etdb.MessagingService.Hubs;
 using Etdb.ServiceBase.Constants;
@@ -41,7 +42,7 @@ namespace Etdb.MessagingService.Bootstrap
                     builder => builder.AllowCredentials().AllowAnyHeader().AllowAnyMethod().WithOrigins("http://localhost:4200"));
             });
 
-            services.AddSignalR(options => { options.EnableDetailedErrors = true; });
+            services.AddSignalR(options => { options.EnableDetailedErrors = this.hostingEnvironment.IsDevelopment(); });
 
             services.AddControllers(options =>
                 {
@@ -77,7 +78,8 @@ namespace Etdb.MessagingService.Bootstrap
 
         public void ConfigureContainer(ContainerBuilder builder)
         {
-            
+            // ReSharper disable once ObjectCreationAsStatement
+            new AutofacFluentBuilder(builder);
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
