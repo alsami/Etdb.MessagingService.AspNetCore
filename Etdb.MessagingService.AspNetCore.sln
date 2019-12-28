@@ -8,7 +8,7 @@ ProjectSection(SolutionItems) = preProject
 	src\Directory.Build.props = src\Directory.Build.props
 EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.MessagingService.Bootstrap", "src\Etdb.MessagingService.Bootstrap\Etdb.MessagingService.Bootstrap.csproj", "{FA80F9C7-D43A-483B-8594-5AC83C81FB66}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Etdb.MessagingService", "src\Etdb.MessagingService\Etdb.MessagingService.csproj", "{FA80F9C7-D43A-483B-8594-5AC83C81FB66}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{7EFB81B0-4C92-449A-BD54-7033A131D97A}"
 EndProject

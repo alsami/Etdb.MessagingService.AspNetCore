@@ -1,4 +1,4 @@
-namespace Etdb.MessagingService.Bootstrap.Configuration
+namespace Etdb.MessagingService.Configuration
 {
     public class IdentityServerConfiguration
     {

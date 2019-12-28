@@ -1,26 +1,23 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Reflection;
 using System.Threading.Tasks;
 using Autofac.Extensions.DependencyInjection;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Serilog;
 using Serilog.Events;
 using Serilog.Sinks.SystemConsole.Themes;
 
-namespace Etdb.MessagingService.Bootstrap
+namespace Etdb.MessagingService
 {
     public class Program
     {
         private static readonly string LogPath = Path.Combine(AppContext.BaseDirectory, "Logs",
             $"{Assembly.GetExecutingAssembly().GetName().Name}.log");
 
-        public static Task Main(string[] args) => CreateHostBuilder(args).Build().RunAsync();
+        public static Task Main(string[] args) => Program.CreateHostBuilder(args).Build().RunAsync();
 
         private static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
@@ -29,7 +26,7 @@ namespace Etdb.MessagingService.Bootstrap
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>()
-                        .ConfigureLogging(ConfigureLogging)
+                        .ConfigureLogging(Program.ConfigureLogging)
                         .UseSerilog();
                 });
 
