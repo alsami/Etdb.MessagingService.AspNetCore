@@ -1,13 +1,8 @@
-sudo: required
 dist: bionic
 language: csharp
 solution: Etdb.MessagingService.AspNetCore.sln
 mono: none
-addons:
-  snaps:
-    - name: dotnet-sdk
-      classic: true
-      channel: latest/beta
+dotnet: 3.1.100
 env:
   global:
     - DocumentDbContextOptions__ConnectionString="mongodb://${MONGODB_USERNAME}:${MONGODB_PASSWORD}@localhost:27017"
@@ -21,8 +16,6 @@ jobs:
   include:
     - stage: build
       name: build solution
-      before_script:
-      - sudo snap alias dotnet-sdk.dotnet dotnet
       script: dotnet restore && dotnet build
     - stage: test
       name: run-tests
@@ -30,7 +23,6 @@ jobs:
         - mongodb
         - redis-server
       before_script:
-        - sudo snap alias dotnet-sdk.dotnet dotnet
         - sh setup-mongodb-user.sh "$MONGODB_USERNAME" "$MONGODB_PASSWORD"
       script: ./run-tests.sh
 
